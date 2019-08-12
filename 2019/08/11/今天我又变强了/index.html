@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>今天我又变强了！ | About Me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强！">
+  <meta name="description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强!  二连跳思路：  最开始的思路是在Input.GetKeyDown(KeyCode.Space).里用一个参数控制它只能跳两次。首先想到的是用int类型定义一个变量JumpCount,默认为0次,当按下空格键时，JumpCount自增一次。然后当JumpCoun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="今天我又变强了！">
 <meta property="og:url" content="http://yoursite.com/2019/08/11/今天我又变强了/index.html">
 <meta property="og:site_name" content="About Me">
-<meta property="og:description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强！">
+<meta property="og:description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强!  二连跳思路：  最开始的思路是在Input.GetKeyDown(KeyCode.Space).里用一个参数控制它只能跳两次。首先想到的是用int类型定义一个变量JumpCount,默认为0次,当按下空格键时，JumpCount自增一次。然后当JumpCoun">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-10T19:22:05.300Z">
+<meta property="og:updated_time" content="2019-08-12T19:11:13.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今天我又变强了！">
-<meta name="twitter:description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强！">
+<meta name="twitter:description" content="如题所示今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡翻墙软件的龟速了。明天继续变强!  二连跳思路：  最开始的思路是在Input.GetKeyDown(KeyCode.Space).里用一个参数控制它只能跳两次。首先想到的是用int类型定义一个变量JumpCount,默认为0次,当按下空格键时，JumpCount自增一次。然后当JumpCoun">
   
     <link rel="alternative" href="/atom.xml" title="About Me" type="application/atom+xml">
   
@@ -178,7 +178,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="如题所示"><a href="#如题所示" class="headerlink" title="如题所示"></a>如题所示</h2><p>今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡<del>翻墙软件</del>的龟速了。明天继续变强！</p>
+        <h2 id="如题所示"><a href="#如题所示" class="headerlink" title="如题所示"></a>如题所示</h2><p>今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡<del>翻墙软件</del>的龟速了。明天继续变强!</p>
+<hr>
+<p><strong>二连跳思路：</strong><br>  最开始的思路是在<code>Input.GetKeyDown(KeyCode.Space).</code>里用一个参数控制它只能跳两次。首先想到的是用int类型定义一个变量JumpCount,默认为0次,当按下空格键时，JumpCount自增一次。然后当<code>JumpCount==2</code>时，return这个按下空格键操作。<br>  限制跳跃次数后，紧接着要把JumpCount清0。此时你脑海里第一个想法肯定是碰到地面清0，这时肯定是在检查碰撞方法中完成。 </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span></span><br><span class="line"><span class="function"></span>    	&#123;</span><br><span class="line">        JumpCount = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>  但是问题又来了，当你碰到除了地面的东西，比如墙壁，比如道具盒子，比如你碰到任何除了地面的物体时，你都能二段跳，这与我们的想法差强人意（成语鬼才是我），这时，解决这种问题的方法就是，<strong>设tag</strong>。代码改成：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">       <span class="keyword">if</span> (collision.gameObject.tag==<span class="string">"ground"</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           JumpCount = <span class="number">0</span>;</span><br><span class="line">       &#125;     </span><br><span class="line">   ｝</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>  噔噔噔噔，一个简单的二连跳做出来了。但是问题又又又来了：比如旁边有个坑，这样我岂不是可以在坑的墙边来回二段跳爬上来？</p>
+<h2 id="！举个栗子"><a href="#！举个栗子" class="headerlink" title="  ！举个栗子"></a>  ！<a href="images/1.png">举个栗子</a></h2><p>  那你给坑边墙的tag改成其它不就行了嘛。你可真是个臭弟弟呢。</p>
 
       
 
