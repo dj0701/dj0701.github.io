@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>今天DJ无敌了吗</title>
+  <title>查找和销毁子物体 | 今天DJ无敌了吗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体)) 思路：  Transform.GetChild(index)是获取当前物体下的第index个物体，返回值为Transform类型。Transform.childCount是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。 1234private v">
-<meta name="keywords" content="Unity C#">
+<meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今天DJ无敌了吗">
+<meta property="og:title" content="查找和销毁子物体">
 <meta property="og:url" content="http://yoursite.com/2019/08/14/查找和删除子物体方法/index.html">
 <meta property="og:site_name" content="今天DJ无敌了吗">
 <meta property="og:description" content="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体)) 思路：  Transform.GetChild(index)是获取当前物体下的第index个物体，返回值为Transform类型。Transform.childCount是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。 1234private v">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-14T15:48:30.755Z">
+<meta property="og:updated_time" content="2019-08-15T18:54:26.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今天DJ无敌了吗">
+<meta name="twitter:title" content="查找和销毁子物体">
 <meta name="twitter:description" content="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体)) 思路：  Transform.GetChild(index)是获取当前物体下的第index个物体，返回值为Transform类型。Transform.childCount是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。 1234private v">
   
     <link rel="alternative" href="/atom.xml" title="今天DJ无敌了吗" type="application/atom+xml">
@@ -162,6 +162,21 @@
             <article id="post-查找和删除子物体方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      查找和销毁子物体
+    </h1>
+  
+
+        
+        <a href="/2019/08/14/查找和删除子物体方法/" class="archive-article-date">
+  	<time datetime="2019-08-14T14:37:53.777Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体"><a href="#查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体" class="headerlink" title="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))"></a>查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))</h2><hr>
@@ -210,6 +225,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -400,6 +426,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
