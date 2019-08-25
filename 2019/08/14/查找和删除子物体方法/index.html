@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="今天DJ无敌了吗">
 <meta property="og:description" content="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体)) 思路：  Transform.GetChild(index)是获取当前物体下的第index个物体，返回值为Transform类型。Transform.childCount是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。 1234private v">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-15T18:54:26.237Z">
+<meta property="og:updated_time" content="2019-08-25T17:46:05.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找和销毁子物体">
 <meta name="twitter:description" content="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体)) 思路：  Transform.GetChild(index)是获取当前物体下的第index个物体，返回值为Transform类型。Transform.childCount是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。 1234private v">
@@ -189,7 +189,7 @@
 <hr>
 <h2 id="删除子物体"><a href="#删除子物体" class="headerlink" title="删除子物体"></a>删除子物体</h2><hr>
 <p><strong>思路:</strong><br>  当你Destroy一个物体时，它的子物体也会被顺带删除，所以Destroy当前物体的子物体就行了。<br>  <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyChild</span>(<span class="params">transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tf.childCount;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Destroy(tf.GetChild(i).gameoject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果硬是要你用DestroyImmidiate（）这种方法，就有点烦人了。DestroyImmidiate()是立即执行的，而在Start()方法里是每帧执行，这样导致了childCount一直在变。因此有2种方法。因为childCount一直在变，所以从子物体的最后一个开始删，就算childCount一直在变，他的最后一个也不会变。</p>
+<p>  如果硬是要你用DestroyImmidiate（）这种方法，就有点搞人了，<del>C酱就是这样搞我们的</del>。DestroyImmidiate()是立即执行的，而在Start()方法里是每帧执行，这样导致了childCount一直在变。因此有2种方法。因为childCount一直在变，所以从子物体的最后一个开始删，就算childCount一直在变，他的最后一个也不会变。</p>
 <h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="  第一种方法"></a>  <strong>第一种方法</strong></h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyA</span>(<span class="params">Transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=tf.childCount<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		DestroyImmediate(tf.GetChild(i).gameObject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -437,15 +437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">解决小问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">解决小问题</a>
               </li>
             
             <div class="clearfix"></div>
