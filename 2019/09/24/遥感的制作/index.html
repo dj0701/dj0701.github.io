@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Unity在3D模式下不能使用Sprite Editor | 今天DJ无敌了吗</title>
+  <title>制作遥感 | 今天DJ无敌了吗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题的出现之前没有的问题在Unity2019.2.0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package Manager,在左侧找到2D Sprite或者直接搜索 2D Sprite,然后在右下角点击Install就行了。  感觉3D项目下默认不安装2D Spri">
-<meta name="keywords" content="解决小问题">
+  <meta name="description" content="要实现的功能    当鼠标左键时,遥感出现。拖动鼠标时，控制遥圈的跟随。松开鼠标左键时，遥感消失。  思路    遥感的位置跟鼠标位置挂钩,并且制作遥感时要有个空物体Control作为父级,子级就是遥感最外层的bg,bg的子级为中间的小圈圈fill。等以后会发图片再补上。    紧接着写代码。  123456789101112131415161718192021222324252627282930">
+<meta name="keywords" content="功能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity在3D模式下不能使用Sprite Editor">
-<meta property="og:url" content="http://yoursite.com/2019/08/26/Unity新版本的小问题/index.html">
+<meta property="og:title" content="制作遥感">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/遥感的制作/index.html">
 <meta property="og:site_name" content="今天DJ无敌了吗">
-<meta property="og:description" content="问题的出现之前没有的问题在Unity2019.2.0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package Manager,在左侧找到2D Sprite或者直接搜索 2D Sprite,然后在右下角点击Install就行了。  感觉3D项目下默认不安装2D Spri">
+<meta property="og:description" content="要实现的功能    当鼠标左键时,遥感出现。拖动鼠标时，控制遥圈的跟随。松开鼠标左键时，遥感消失。  思路    遥感的位置跟鼠标位置挂钩,并且制作遥感时要有个空物体Control作为父级,子级就是遥感最外层的bg,bg的子级为中间的小圈圈fill。等以后会发图片再补上。    紧接着写代码。  123456789101112131415161718192021222324252627282930">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-25T16:43:02.730Z">
+<meta property="og:updated_time" content="2019-09-23T16:55:23.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity在3D模式下不能使用Sprite Editor">
-<meta name="twitter:description" content="问题的出现之前没有的问题在Unity2019.2.0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package Manager,在左侧找到2D Sprite或者直接搜索 2D Sprite,然后在右下角点击Install就行了。  感觉3D项目下默认不安装2D Spri">
+<meta name="twitter:title" content="制作遥感">
+<meta name="twitter:description" content="要实现的功能    当鼠标左键时,遥感出现。拖动鼠标时，控制遥圈的跟随。松开鼠标左键时，遥感消失。  思路    遥感的位置跟鼠标位置挂钩,并且制作遥感时要有个空物体Control作为父级,子级就是遥感最外层的bg,bg的子级为中间的小圈圈fill。等以后会发图片再补上。    紧接着写代码。  123456789101112131415161718192021222324252627282930">
   
     <link rel="alternative" href="/atom.xml" title="今天DJ无敌了吗" type="application/atom+xml">
   
@@ -159,28 +159,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Unity新版本的小问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-遥感的制作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Unity在3D模式下不能使用Sprite Editor
+      制作遥感
     </h1>
   
 
         
-        <a href="/2019/08/26/Unity新版本的小问题/" class="archive-article-date">
-  	<time datetime="2019-08-25T16:24:25.314Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+        <a href="/2019/09/24/遥感的制作/" class="archive-article-date">
+  	<time datetime="2019-09-23T16:39:45.961Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题的出现"><a href="#问题的出现" class="headerlink" title="问题的出现"></a>问题的出现</h2><h2 id="之前没有的问题在Unity2019-2-0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite-Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package-Manager-在左侧找到2D-Sprite或者直接搜索-2D-Sprite-然后在右下角点击Install就行了。"><a href="#之前没有的问题在Unity2019-2-0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite-Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package-Manager-在左侧找到2D-Sprite或者直接搜索-2D-Sprite-然后在右下角点击Install就行了。" class="headerlink" title="之前没有的问题在Unity2019.2.0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package Manager,在左侧找到2D Sprite或者直接搜索 2D Sprite,然后在右下角点击Install就行了。"></a>之前没有的问题在Unity2019.2.0f1出现了，具体是在项目创建时因为选择了3D模式，进入后中途想换2D点击Sprite Editor时提示缺少Sprite2DPackages。只需在工具栏的Window下选择Package Manager,在左侧找到2D Sprite或者直接搜索 2D Sprite,然后在右下角点击Install就行了。</h2><p>  感觉3D项目下默认不安装2D Sprite是为了减少整个项目的大小，现在2D项目转3D项目一开始是少了Directional Light,加上去就行了。</p>
+        <p><strong>要实现的功能</strong><br>    当鼠标左键时,遥感出现。拖动鼠标时，控制遥圈的跟随。松开鼠标左键时，遥感消失。</p>
+<hr>
+<p><strong>思路</strong><br>    遥感的位置跟鼠标位置挂钩,并且制作遥感时要有个空物体Control作为父级,子级就是遥感最外层的bg,bg的子级为中间的小圈圈fill。等以后会发图片再补上。<br>    紧接着写代码。</p>
+<hr>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Controller</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    Transform bgTf;</span><br><span class="line">    Transform fillTf;</span><br><span class="line">    <span class="keyword">float</span> R = <span class="number">50</span>;</span><br><span class="line">    <span class="comment">// Start is called before the first frame update</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        bgTf = transform.Find(<span class="string">"bg"</span>);<span class="comment">//获取bg</span></span><br><span class="line">        fillTf = transform.Find(<span class="string">"bg/fill"</span>);<span class="comment">//获取小圈圈</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Update is called once per frame</span></span><br><span class="line"></span><br><span class="line">    Vector3 Initpos;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>))<span class="comment">//</span></span><br><span class="line">        &#123;</span><br><span class="line">            bgTf.gameObject.SetActive(<span class="literal">true</span>);<span class="comment">//显示</span></span><br><span class="line">            bgTf.position = Input.mousePosition;</span><br><span class="line">            fillTf.transform.position = Input.mousePosition;<span class="comment">//初始化小圈圈的位置</span></span><br><span class="line">            Initpos = fillTf.position;<span class="comment">//记录位置</span></span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButton(<span class="number">0</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            Vector3 dir = Input.mousePosition - Initpos;<span class="comment">//得到有方向有大小的Vector3</span></span><br><span class="line">            <span class="keyword">if</span> (Vector3.Distance(Input.mousePosition,Initpos)&gt;=R)<span class="comment">//当超过给定的值时 圈圈位置就等于初始位置加上单位为1的方向乘R就是小圈圈运动的范围</span></span><br><span class="line">            &#123;</span><br><span class="line">                fillTf.position =Initpos+dir.normalized * R;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                fillTf.position = Input.mousePosition;<span class="comment">//没超过就跟着鼠标位置</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonUp(<span class="number">0</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            bgTf.gameObject.SetActive(<span class="literal">false</span>);<span class="comment">//隐藏</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<pre><code>在鼠标拖拽时,`Vector3 dir = Input.mousePosition - Initpos;`这个方向可以传给玩家,玩家就有了移动的方向。一定要记住是玩家操纵遥感时角色移动，而不是本末倒置。
+UI中的图标能跟着鼠标动而不用转换坐标系应该是因为UI和鼠标使用的是同一坐标系，既然不是世界坐标系那就是屏幕坐标系了。</code></pre>
       
 
       
@@ -214,7 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">解决小问题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
         		</li>
       		
 		</ul>
@@ -270,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/26/Unity新版本的小问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/24/遥感的制作/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/26/查重/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          int数组查重
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/14/查找和删除子物体方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">查找和销毁子物体</div>
+    <a href="/2019/09/17/物体移动到鼠标点击位置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">物体移动到鼠标点击位置</div>
       <i class="icon-circle-right"></i>
     </a>
   
