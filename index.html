@@ -160,6 +160,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-时间倒数计时UI的制作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/时间倒数计时UI的制作/">今天我又变强了！</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/30/时间倒数计时UI的制作/" class="archive-article-date">
+  	<time datetime="2019-10-30T13:49:27.101Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="直入主题"><a href="#直入主题" class="headerlink" title="直入主题"></a>直入主题</h2><p>首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为<code>totalTime=300;</code>.</p>
+<p>接着定义2个int类型的min和second.</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> min;</span><br><span class="line"><span class="keyword">int</span> second;</span><br><span class="line">Text timeTxt;</span><br></pre></td></tr></table></figure>
+
+<p>紧接着在Update里面 <code>totalTime-=Time.deltaTime;</code> ,这样totalTime就开始计时了.min就等于剩余的时间/60,因为是int类型,所以只保留整数.second就等于剩余时间减去60*min.</p>
+<p>由于Text的文本属于string类型,而string类型有个重载,可以设置显示的格式,代码如下</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">       totalTime -= Time.deltaTime;</span><br><span class="line"></span><br><span class="line">       minute = (<span class="keyword">int</span>)totalTime/<span class="number">60</span>;</span><br><span class="line">       second = (<span class="keyword">int</span>)totalTime - <span class="number">60</span>*minute;</span><br><span class="line"></span><br><span class="line">       time.text =<span class="keyword">string</span>.Format(<span class="string">"&#123;0&#125;:&#123;1:D2&#125;"</span>,  minute, second);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>中括号是占位符,分号后面的D是保留几位数,<code>D2</code>的意义在于当秒数为9的时候,文本会显示为<code>4:09</code>而不是<code>4:9</code>。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小技巧</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/30/时间倒数计时UI的制作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-遥感的制作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -802,19 +884,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">解决小问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+                <a href="javascript:void(0)" class="js-tag color1">解决小问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
               </li>
             
             <div class="clearfix"></div>
