@@ -22,19 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="你们是谁？">
-<meta name="keywords" content="Unity C#">
-<meta property="og:type" content="website">
-<meta property="og:title" content="今天DJ无敌了吗">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="清除Cocos所不需要的模块部分Cocos引擎贯彻模块化,不仅代码可以模块化,引擎也可以模块化。所以我们只需要把不需要用到的模块不导出就行了。 位于`Project-Project Setting-Module Config`,把你所不需要的...什么?看不懂英文?你用的是中文版?那可真是`轰多尼果咩纳塞`了。把你用不到的模块反选就瘦身成功了。分包我做完第一步,容量就足够我导出了。所以分包没研究过">
+<meta name="keywords" content="解决小问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocos发布微信小游戏时容量太大问题">
+<meta property="og:url" content="http://yoursite.com/2020/01/07/Cocos发布微信小游戏时容量太大问题/index.html">
 <meta property="og:site_name" content="今天DJ无敌了吗">
-<meta property="og:description" content="你们是谁？">
+<meta property="og:description" content="清除Cocos所不需要的模块部分Cocos引擎贯彻模块化,不仅代码可以模块化,引擎也可以模块化。所以我们只需要把不需要用到的模块不导出就行了。 位于`Project-Project Setting-Module Config`,把你所不需要的...什么?看不懂英文?你用的是中文版?那可真是`轰多尼果咩纳塞`了。把你用不到的模块反选就瘦身成功了。分包我做完第一步,容量就足够我导出了。所以分包没研究过">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-22T15:27:29.656Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今天DJ无敌了吗">
-<meta name="twitter:description" content="你们是谁？">
+<meta name="twitter:title" content="Cocos发布微信小游戏时容量太大问题">
+<meta name="twitter:description" content="清除Cocos所不需要的模块部分Cocos引擎贯彻模块化,不仅代码可以模块化,引擎也可以模块化。所以我们只需要把不需要用到的模块不导出就行了。 位于`Project-Project Setting-Module Config`,把你所不需要的...什么?看不懂英文?你用的是中文版?那可真是`轰多尼果咩纳塞`了。把你用不到的模块反选就瘦身成功了。分包我做完第一步,容量就足够我导出了。所以分包没研究过">
 
-<link rel="canonical" href="http://yoursite.com/archives/2019/09/">
+<link rel="canonical" href="http://yoursite.com/2020/01/07/Cocos发布微信小游戏时容量太大问题/">
 
 
 <script id="page-configurations">
@@ -42,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 今天DJ无敌了吗</title>
+  <title>Cocos发布微信小游戏时容量太大问题 | 今天DJ无敌了吗</title>
   
 
 
@@ -149,69 +150,86 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 10 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/Cocos发布微信小游戏时容量太大问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DJ">
+      <meta itemprop="description" content="你们是谁？">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天DJ无敌了吗">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Cocos发布微信小游戏时容量太大问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 10:26:36" itemprop="dateCreated datePublished" datetime="2020-01-07T10:26:36+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-22 23:27:29" itemprop="dateModified" datetime="2020-05-22T23:27:29+08:00">2020-05-22</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
+        <h3 id="清除Cocos所不需要的模块部分"><a href="#清除Cocos所不需要的模块部分" class="headerlink" title="清除Cocos所不需要的模块部分"></a>清除Cocos所不需要的模块部分</h3><pre><code>Cocos引擎贯彻模块化,不仅代码可以模块化,引擎也可以模块化。所以我们只需要把不需要用到的模块不导出就行了。 位于`Project-Project Setting-Module Config`,把你所不需要的...什么?看不懂英文?你用的是中文版?那可真是`轰多尼果咩纳塞`了。把你用不到的模块反选就瘦身成功了。</code></pre><h3 id="分包"><a href="#分包" class="headerlink" title="分包"></a>分包</h3><pre><code>我做完第一步,容量就足够我导出了。所以分包没研究过，不会做，自己百度去。</code></pre>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-24T00:39:45+08:00"
-              content="2019-09-24">
-          09-24
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/解决小问题/" rel="tag"># 解决小问题</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/24/遥感的制作/" itemprop="url">
-            <span itemprop="name">制作遥感</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-17T21:31:38+08:00"
-              content="2019-09-17">
-          09-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/17/物体移动到鼠标点击位置/" itemprop="url">
-            <span itemprop="name">物体移动到鼠标点击位置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/05/接入微信开发者工具遇到的问题/" rel="prev" title="接入微信开发者平台遇到的问题">
+      <i class="fa fa-chevron-left"></i> 接入微信开发者平台遇到的问题
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -262,6 +280,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#清除Cocos所不需要的模块部分"><span class="nav-number">1.</span> <span class="nav-text">清除Cocos所不需要的模块部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分包"><span class="nav-number">2.</span> <span class="nav-text">分包</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
