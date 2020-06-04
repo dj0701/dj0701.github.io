@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Ma Shan Zheng:300,300italic,400,400italic,700,700italic|Apple LiGothic Medium:300,300italic,400,400italic,700,700italic|Quattrocento Sans:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 01:53:36" itemprop="dateModified" datetime="2019-08-26T01:53:36+08:00">2019-08-26</time>
+                <time title="修改时间：2020-06-05 04:59:17" itemprop="dateModified" datetime="2020-06-05T04:59:17+08:00">2020-06-05</time>
               </span>
 
           
@@ -229,23 +229,15 @@
 
       
           <h2 id="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体"><a href="#查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体" class="headerlink" title="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))"></a>查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))</h2><hr>
-<p><strong>思路：</strong><br>  <code>Transform.GetChild(index)</code>是获取当前物体下的第index个物体，返回值为Transform类型。<code>Transform.childCount</code>是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。<br> <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FindChild</span>(<span class="params">Transform tf,<span class="keyword">ref</span> <span class="keyword">int</span> count</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	count=tf.childCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>   然后在Start()方法里调用这个方法就能获取当前同级下的子物体个数了。现在的问题在于：如何得到子物体的子物体。把FindChild方法给子物体不就能得到子物体了嘛。<br>   思路不就来了嘛，上面介绍了刚刚介绍了<code>Transform.GetChild(index)</code>方法,传入一个index得到第index个子物体，那么把第index个子物体传入<code>FindChild()</code>方法不就能找到它的子物体了嘛。有的人又问了：这只能得到第index个物体啊，我如果想全都要呢？全都要就用for循环啊，tf.childCount不就是全部子物体吗?</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FindChild</span>(<span class="params">Transform tf.<span class="keyword">ref</span> <span class="keyword">int</span> count</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	count+=tf.childCount;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tf.childCount;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		FindChild(tf.GetChild(i),<span class="keyword">ref</span> count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>  注意上面count是+=tf.childCount,因为count是累加的。</p>
-<hr>
-<hr>
-<h2 id="删除子物体"><a href="#删除子物体" class="headerlink" title="删除子物体"></a>删除子物体</h2><hr>
-<p><strong>思路:</strong><br>  当你Destroy一个物体时，它的子物体也会被顺带删除，所以Destroy当前物体的子物体就行了。<br>  <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyChild</span>(<span class="params">transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tf.childCount;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Destroy(tf.GetChild(i).gameoject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果硬是要你用<code>DestroyImmidiate（）</code>这种方法，就有点搞人了。<del>C酱就是这样搞我们的</del><code>DestroyImmidiate()</code>是立即执行的，而在Start()方法里是每帧执行，这样导致了childCount一直在变。因此有2种方法。因为childCount一直在变，所以从子物体的最后一个开始删，就算childCount一直在变，他的最后一个也不会变。</p>
-<h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="  第一种方法"></a>  <strong>第一种方法</strong></h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyA</span>(<span class="params">Transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=tf.childCount<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		DestroyImmediate(tf.GetChild(i).gameObject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a><strong>第二种方法</strong></h2><p>  一直删除第一个，直到他的childCount为0，就跳出.</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyB</span>(<span class="params">transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		DestroyImmediate(tf.GetChild(<span class="number">0</span>).gameObject);</span><br><span class="line">		<span class="keyword">if</span>(tf.childCount==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<p><strong>思路：</strong><br>  <code>Transform.GetChild(index)</code>是获取当前物体下的第index个物体，返回值为Transform类型。<code>Transform.childCount</code>是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/14/查找和删除子物体方法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -295,7 +287,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 04:17:51" itemprop="dateModified" datetime="2020-06-05T04:17:51+08:00">2020-06-05</time>
+                <time title="修改时间：2020-06-05 04:57:34" itemprop="dateModified" datetime="2020-06-05T04:57:34+08:00">2020-06-05</time>
               </span>
 
           
@@ -310,19 +302,14 @@
 
       
           <h2 id="如题所示"><a href="#如题所示" class="headerlink" title="如题所示"></a>如题所示</h2><p>今天我把二连跳弄出来了，思路很简单，想到就直接打出来了。还通宵弄了个vps，这下可以不用忍受辣鸡<del>翻墙软件</del>的龟速了。明天继续变强!</p>
-<hr>
-<p><strong>二连跳思路：</strong><br>  最开始的思路是在<code>Input.GetKeyDown(KeyCode.Space).</code>里用一个参数控制它只能跳两次。首先想到的是用int类型定义一个变量JumpCount,默认为0次,当按下空格键时，JumpCount自增一次。然后当<code>JumpCount==2</code>时，return这个按下空格键操作。<br>  限制跳跃次数后，紧接着要把JumpCount清0。此时你脑海里第一个想法肯定是碰到地面清0，这时肯定是在检查碰撞方法中完成。</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span></span><br><span class="line"><span class="function"></span>    	&#123;</span><br><span class="line">        JumpCount = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>  但是问题又来了，当你碰到除了地面的东西，比如墙壁，比如道具盒子，比如你碰到任何除了地面的物体时，你都能二段跳，这与我们的想法差强人意（成语鬼才是我），这时，解决这种问题的方法就是，<strong>设tag</strong>。代码改成：</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">       <span class="keyword">if</span> (collision.gameObject.tag==<span class="string">"ground"</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           JumpCount = <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   ｝</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>  <img src="/2019/08/11/今天我又变强了/1.png" alt="举个栗子"></p>
-<hr>
-<p>  (那你给坑边墙的tag改成其它不就行了嘛。你可真是个臭弟弟呢。)</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/11/今天我又变强了/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

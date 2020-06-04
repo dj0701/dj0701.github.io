@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Ma Shan Zheng:300,300italic,400,400italic,700,700italic|Apple LiGothic Medium:300,300italic,400,400italic,700,700italic|Quattrocento Sans:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
@@ -23,18 +23,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;  紧接着在Update里面 totalTime-=Time.deltaTime; ,这样totalTime就开始计">
+  <meta name="description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;">
 <meta name="keywords" content="小技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间倒数计时UI的制作">
 <meta property="og:url" content="http://yoursite.com/2019/10/30/时间倒数计时UI的制作/index.html">
 <meta property="og:site_name" content="今天DJ无敌了吗">
-<meta property="og:description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;  紧接着在Update里面 totalTime-=Time.deltaTime; ,这样totalTime就开始计">
+<meta property="og:description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-04T20:16:04.059Z">
+<meta property="og:updated_time" content="2020-06-04T20:59:47.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="时间倒数计时UI的制作">
-<meta name="twitter:description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;  紧接着在Update里面 totalTime-=Time.deltaTime; ,这样totalTime就开始计">
+<meta name="twitter:description" content="直入主题首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为totalTime=300;. 接着定义2个int类型的min和second. 123int min;int second;Text timeTxt;">
 
 <link rel="canonical" href="http://yoursite.com/2019/10/30/时间倒数计时UI的制作/">
 
@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 04:16:04" itemprop="dateModified" datetime="2020-06-05T04:16:04+08:00">2020-06-05</time>
+                <time title="修改时间：2020-06-05 04:59:47" itemprop="dateModified" datetime="2020-06-05T04:59:47+08:00">2020-06-05</time>
               </span>
 
           
@@ -232,6 +232,7 @@
 <p>接着定义2个int类型的min和second.</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> min;</span><br><span class="line"><span class="keyword">int</span> second;</span><br><span class="line">Text timeTxt;</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
 <p>紧接着在Update里面 <code>totalTime-=Time.deltaTime;</code> ,这样totalTime就开始计时了.min就等于剩余的时间/60,因为是int类型,所以只保留整数.second就等于剩余时间减去60*min.</p>
 <p>由于Text的文本属于string类型,而string类型有个重载,可以设置显示的格式,代码如下</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>   &#123;</span><br><span class="line">       totalTime -= Time.deltaTime;</span><br><span class="line"></span><br><span class="line">       minute = (<span class="keyword">int</span>)totalTime/<span class="number">60</span>;</span><br><span class="line">       second = (<span class="keyword">int</span>)totalTime - <span class="number">60</span>*minute;</span><br><span class="line"></span><br><span class="line">       time.text =<span class="keyword">string</span>.Format(<span class="string">"&#123;0&#125;:&#123;1:D2&#125;"</span>,  minute, second);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
