@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>物体B绕物体A旋转的方法</title>
+      <link href="/2020/06/05/%E7%89%A9%E4%BD%93B%E7%BB%95%E7%89%A9%E4%BD%93A%E6%97%8B%E8%BD%AC%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/06/05/%E7%89%A9%E4%BD%93B%E7%BB%95%E7%89%A9%E4%BD%93A%E6%97%8B%E8%BD%AC%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="先看图"><a href="#先看图" class="headerlink" title="先看图"></a>先看图</h3><p>  <img src="/2020/06/05/物体B绕物体A旋转的方法/%E7%82%B9A%E4%B8%8E%E5%8E%9F%E7%82%B9O%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="点A与原点O的关系"></p><p>  首先明确一点,<del><code>θ可以用QQ拼音&quot;西塔&quot;或者&quot;theta&quot;打出来</code></del>,A.x和A.y是决定点A的位置,也就是A的坐标是未知,你要求赋予A坐标,A才会运动。假如点A要绕原点O做圆周运动,那么R就是圆的半径,O就是圆心。那么就有<code>sinθ=A.y/R</code>,<code>cosθ=A.x/R</code>,公式变化一下就有:</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.x = cosθ*R;</span><br><span class="line">A.y = sinθ*R;</span><br></pre></td></tr></table></figure><p>  <img src="/2020/06/05/物体B绕物体A旋转的方法/A%E8%BF%90%E5%8A%A8%E5%88%B0B.png" alt="A运动到B"><br>  当物体A绕原点O做圆周运动到B时,可以发现,夹角θ变大了,也就是说明,<strong>θ越大,物体向逆时针运动</strong>。讲到这,相信大家都懂如何实现这个功能了,以下是代码.</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Transform obj;<span class="comment">//相当于原点O 也就是你要绕着转的物体</span></span><br><span class="line">Vector2 pos;<span class="comment">//临时变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> angle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> RoutateSpeed;<span class="comment">//旋转速度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> radius;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FixedUpdate</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    angle += RoutateSpeed * Time.fixedDeltaTime;</span><br><span class="line">    pos.x = obj.position.x + Mathf.Cos(angle) * radius;</span><br><span class="line">    pos.y = obj.position.y + Mathf.Sin(angle) * radius;</span><br><span class="line">    transform.position = pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  其实到这里还有一个问题,那就是,标题的物体B在哪?</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cocos葵花宝典</title>
       <link href="/2020/05/23/Cocos%E8%91%B5%E8%8A%B1%E5%AE%9D%E5%85%B8/"/>
       <url>/2020/05/23/Cocos%E8%91%B5%E8%8A%B1%E5%AE%9D%E5%85%B8/</url>

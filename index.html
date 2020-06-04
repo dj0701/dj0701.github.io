@@ -183,6 +183,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/物体B绕物体A旋转的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DJ">
+      <meta itemprop="description" content="生不带来 死不带走的还有知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天DJ无敌了吗">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/05/物体B绕物体A旋转的方法/" class="post-title-link" itemprop="url">物体B绕物体A旋转的方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-05 03:24:27 / 修改时间：04:09:51" itemprop="dateCreated datePublished" datetime="2020-06-05T03:24:27+08:00">2020-06-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="先看图"><a href="#先看图" class="headerlink" title="先看图"></a>先看图</h3><p>  <img src="/2020/06/05/物体B绕物体A旋转的方法/%E7%82%B9A%E4%B8%8E%E5%8E%9F%E7%82%B9O%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="点A与原点O的关系"></p>
+<p>  首先明确一点,<del><code>θ可以用QQ拼音&quot;西塔&quot;或者&quot;theta&quot;打出来</code></del>,A.x和A.y是决定点A的位置,也就是A的坐标是未知,你要求赋予A坐标,A才会运动。假如点A要绕原点O做圆周运动,那么R就是圆的半径,O就是圆心。那么就有<code>sinθ=A.y/R</code>,<code>cosθ=A.x/R</code>,公式变化一下就有:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.x = cosθ*R;</span><br><span class="line">A.y = sinθ*R;</span><br></pre></td></tr></table></figure>
+
+<p>  <img src="/2020/06/05/物体B绕物体A旋转的方法/A%E8%BF%90%E5%8A%A8%E5%88%B0B.png" alt="A运动到B"><br>  当物体A绕原点O做圆周运动到B时,可以发现,夹角θ变大了,也就是说明,<strong>θ越大,物体向逆时针运动</strong>。讲到这,相信大家都懂如何实现这个功能了,以下是代码.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Transform obj;<span class="comment">//相当于原点O 也就是你要绕着转的物体</span></span><br><span class="line">Vector2 pos;<span class="comment">//临时变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> angle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> RoutateSpeed;<span class="comment">//旋转速度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">float</span> radius;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FixedUpdate</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    angle += RoutateSpeed * Time.fixedDeltaTime;</span><br><span class="line">    pos.x = obj.position.x + Mathf.Cos(angle) * radius;</span><br><span class="line">    pos.y = obj.position.y + Mathf.Sin(angle) * radius;</span><br><span class="line">    transform.position = pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  其实到这里还有一个问题,那就是,标题的物体B在哪?</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/23/Cocos葵花宝典/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -763,87 +829,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/查找和删除子物体方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="DJ">
-      <meta itemprop="description" content="生不带来 死不带走的还有知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="今天DJ无敌了吗">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/14/查找和删除子物体方法/" class="post-title-link" itemprop="url">查找和销毁子物体</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-14 22:37:53" itemprop="dateCreated datePublished" datetime="2019-08-14T22:37:53+08:00">2019-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 01:53:36" itemprop="dateModified" datetime="2019-08-26T01:53:36+08:00">2019-08-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体"><a href="#查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体" class="headerlink" title="查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))"></a>查找子物体总个数（包括孙子（即子物体的子物体），曾孙（子物体的子物体的子物体))</h2><hr>
-<p><strong>思路：</strong><br>  <code>Transform.GetChild(index)</code>是获取当前物体下的第index个物体，返回值为Transform类型。<code>Transform.childCount</code>是获取当前物体下有多少个同级别的子物体个数（即不包括子物体的子物体）。有了这2个方法后，可以写一个方法来获取同级的个数。<br> <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FindChild</span>(<span class="params">Transform tf,<span class="keyword">ref</span> <span class="keyword">int</span> count</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	count=tf.childCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>   然后在Start()方法里调用这个方法就能获取当前同级下的子物体个数了。现在的问题在于：如何得到子物体的子物体。把FindChild方法给子物体不就能得到子物体了嘛。<br>   思路不就来了嘛，上面介绍了刚刚介绍了<code>Transform.GetChild(index)</code>方法,传入一个index得到第index个子物体，那么把第index个子物体传入<code>FindChild()</code>方法不就能找到它的子物体了嘛。有的人又问了：这只能得到第index个物体啊，我如果想全都要呢？全都要就用for循环啊，tf.childCount不就是全部子物体吗?</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FindChild</span>(<span class="params">Transform tf.<span class="keyword">ref</span> <span class="keyword">int</span> count</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	count+=tf.childCount;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tf.childCount;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		FindChild(tf.GetChild(i),<span class="keyword">ref</span> count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>  注意上面count是+=tf.childCount,因为count是累加的。</p>
-<hr>
-<hr>
-<h2 id="删除子物体"><a href="#删除子物体" class="headerlink" title="删除子物体"></a>删除子物体</h2><hr>
-<p><strong>思路:</strong><br>  当你Destroy一个物体时，它的子物体也会被顺带删除，所以Destroy当前物体的子物体就行了。<br>  <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyChild</span>(<span class="params">transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tf.childCount;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Destroy(tf.GetChild(i).gameoject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果硬是要你用<code>DestroyImmidiate（）</code>这种方法，就有点搞人了。<del>C酱就是这样搞我们的</del><code>DestroyImmidiate()</code>是立即执行的，而在Start()方法里是每帧执行，这样导致了childCount一直在变。因此有2种方法。因为childCount一直在变，所以从子物体的最后一个开始删，就算childCount一直在变，他的最后一个也不会变。</p>
-<h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="  第一种方法"></a>  <strong>第一种方法</strong></h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyA</span>(<span class="params">Transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=tf.childCount<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		DestroyImmediate(tf.GetChild(i).gameObject);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a><strong>第二种方法</strong></h2><p>  一直删除第一个，直到他的childCount为0，就跳出.</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DestroyB</span>(<span class="params">transform tf</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		DestroyImmediate(tf.GetChild(<span class="number">0</span>).gameObject);</span><br><span class="line">		<span class="keyword">if</span>(tf.childCount==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -914,7 +899,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
