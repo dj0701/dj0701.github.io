@@ -183,6 +183,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/09/22/面试问到的问题(合集)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DJ">
+      <meta itemprop="description" content="找工作找工作">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天DJ找到工作了吗">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/22/面试问到的问题(合集)/" class="post-title-link" itemprop="url">面试问到的问题(合集)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-22 23:30:00" itemprop="dateCreated datePublished" datetime="2021-09-22T23:30:00+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-27 17:51:54" itemprop="dateModified" datetime="2021-09-27T17:51:54+08:00">2021-09-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="问-解释一下包围盒碰撞原理"><a href="#问-解释一下包围盒碰撞原理" class="headerlink" title="问:解释一下包围盒碰撞原理"></a><font color="#ff0000">问:解释一下包围盒碰撞原理</font></h3><p>答:包围盒有八个点,那就意味着每个包围盒必定有一个最大值和最小。由轴判断两个包围盒的的最大值和最小值的大小来判断两个包围盒是否相交。<br>只有当<font color="#ff0000">每个轴</font>上的最大值<font color="#ff0000">大于等于</font>每个轴上的最小值才能证明是<font color="#ff0000">相交</font>,其它情况均为不相交</p>
+<p>立方体与立方体碰撞</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">isIntersectedByAABB</span>(<span class="params">AABB boundA,AABB boundB</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (boundA.GetMax().x &gt;= boundB.GetMin().x &amp;&amp;   <span class="comment">//X轴</span></span><br><span class="line">    boundA.GetMax().y &gt;= boundB.GetMin().y &amp;&amp;           <span class="comment">//Y轴</span></span><br><span class="line">    boundA.GetMax().z &gt;= boundB.GetMin().z);            <span class="comment">//Z轴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>球体与球体碰撞</p>
+<p>比较它们的圆心距离和半径距离的关系,如果两球的圆心距离小于等于半径和,那就证明碰撞了</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">isIntersectedBySphere</span>(<span class="params">AABB sphereA,AABB sphereB</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ( Vector3.DistanceSqr(sphereA.center(),sphereB.center()) &lt;= Math.pow((sphereA.radius + spereB.radius),<span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>球体与立方体碰撞</p>
+<p>最简单的方法就是就是遍历立方体的所有顶点跟球体半径求距离,如果求出来的距离是小于等于球体半径的,那就是碰撞了。<br>另一种方法就是求出立方体和球体中心点最近的那个点,然后比较跟里球体中心点的距离和半径的关系。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">isIntersectedByMix</span>(<span class="params">AABB bound,AABB sphere</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> x = Math.max(bound.min().x,Math.min(bound.max().x,sphere.center().x));</span><br><span class="line">    <span class="keyword">float</span> y = Math.max(bound.min().y,Math.min(bound.max().y,sphere.center().y));</span><br><span class="line">    <span class="keyword">float</span> z = Math.max(bound.min().z,Math.min(bound.max().z,sphere.center().z));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> dis = Vector3.Distance(sphere.center(),<span class="keyword">new</span> vector3(x,y,z));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dis &lt;= shpere.radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="问-说一下四元数"><a href="#问-说一下四元数" class="headerlink" title="问:说一下四元数"></a><font color="#ff0000">问:说一下四元数</font></h3><p>答:(答得不好)解决万向锁的问题,四元数点乘跟向量点乘类似,ArCos(点乘积)能求出两个四元数相差的角度,点积等于1,两四元数相等;点积等于0,两四元数垂直;点积等于-1,两四元数相反。四元数插值Slerp可以加上个判断当连四元数点积大于&gt;0.99时就停止插值。</p>
+<h3 id="问"><a href="#问" class="headerlink" title="问:"></a><font color="#ff0000">问:</font></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/17/Unity遇到的奇奇怪怪的坑的解决方案或技巧(持续更新)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,7 +291,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-18 00:08:04" itemprop="dateModified" datetime="2021-09-18T00:08:04+08:00">2021-09-18</time>
+                <time title="修改时间：2021-09-22 23:37:03" itemprop="dateModified" datetime="2021-09-22T23:37:03+08:00">2021-09-22</time>
               </span>
 
           
@@ -228,7 +305,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="我是绿色"><a href="#我是绿色" class="headerlink" title="我是绿色"></a><font color="#008000">我是绿色</font></h2><hr>
+          <hr>
 <ol>
 <li><p>UI预制体加载后要用<code>Instantiate(GameObject go,Transform parnet)</code>设置父物体,直接生成出来会改变UI的RectTransform本身的属性</p>
 </li>
@@ -814,78 +891,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/物体移动到鼠标点击位置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="DJ">
-      <meta itemprop="description" content="找工作找工作">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="今天DJ找到工作了吗">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/17/物体移动到鼠标点击位置/" class="post-title-link" itemprop="url">物体移动到鼠标点击位置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-17 21:31:38" itemprop="dateCreated datePublished" datetime="2019-09-17T21:31:38+08:00">2019-09-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 04:59:24" itemprop="dateModified" datetime="2020-06-05T04:59:24+08:00">2020-06-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>思路</strong><br>用射线检测实现,用协程移动,</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/17/物体移动到鼠标点击位置/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -956,7 +961,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
