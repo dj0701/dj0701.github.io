@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-27 17:51:54" itemprop="dateModified" datetime="2021-09-27T17:51:54+08:00">2021-09-27</time>
+                <time title="修改时间：2021-10-01 12:51:39" itemprop="dateModified" datetime="2021-10-01T12:51:39+08:00">2021-10-01</time>
               </span>
 
           
@@ -240,8 +240,14 @@
 <p>最简单的方法就是就是遍历立方体的所有顶点跟球体半径求距离,如果求出来的距离是小于等于球体半径的,那就是碰撞了。<br>另一种方法就是求出立方体和球体中心点最近的那个点,然后比较跟里球体中心点的距离和半径的关系。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">isIntersectedByMix</span>(<span class="params">AABB bound,AABB sphere</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> x = Math.max(bound.min().x,Math.min(bound.max().x,sphere.center().x));</span><br><span class="line">    <span class="keyword">float</span> y = Math.max(bound.min().y,Math.min(bound.max().y,sphere.center().y));</span><br><span class="line">    <span class="keyword">float</span> z = Math.max(bound.min().z,Math.min(bound.max().z,sphere.center().z));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> dis = Vector3.Distance(sphere.center(),<span class="keyword">new</span> vector3(x,y,z));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dis &lt;= shpere.radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="问-说一下四元数"><a href="#问-说一下四元数" class="headerlink" title="问:说一下四元数"></a><font color="#ff0000">问:说一下四元数</font></h3><p>答:(答得不好)解决万向锁的问题,四元数点乘跟向量点乘类似,ArCos(点乘积)能求出两个四元数相差的角度,点积等于1,两四元数相等;点积等于0,两四元数垂直;点积等于-1,两四元数相反。四元数插值Slerp可以加上个判断当连四元数点积大于&gt;0.99时就停止插值。</p>
-<h3 id="问"><a href="#问" class="headerlink" title="问:"></a><font color="#ff0000">问:</font></h3>
+<h3 id="问-说一下四元数"><a href="#问-说一下四元数" class="headerlink" title="问:说一下四元数"></a><font color="#ff0000">问:说一下四元数</font></h3><p>答:<br>(答得不好)解决万向锁的问题,四元数点乘跟向量点乘类似,ArCos(点乘积)能求出两个四元数相差的角度,点积等于1,两四元数相等;点积等于0,两四元数垂直;点积等于-1,两四元数相反。四元数插值Slerp可以加上个判断当连四元数点积大于&gt;0.99时就停止插值。</p>
+<h3 id="问-说下Camera组件每个参数的含义以及应用场景"><a href="#问-说下Camera组件每个参数的含义以及应用场景" class="headerlink" title="问:说下Camera组件每个参数的含义以及应用场景"></a><font color="#ff0000">问:说下Camera组件每个参数的含义以及应用场景</font></h3><p>答：百度</p>
+<h3 id="问-说下Lightling组件每个参数的含义以及应用场景"><a href="#问-说下Lightling组件每个参数的含义以及应用场景" class="headerlink" title="问:说下Lightling组件每个参数的含义以及应用场景"></a><font color="#ff0000">问:说下Lightling组件每个参数的含义以及应用场景</font></h3><p>答：百度</p>
+<h3 id="问-有无用过开源的游戏框架"><a href="#问-有无用过开源的游戏框架" class="headerlink" title="问:有无用过开源的游戏框架"></a><font color="#ff0000">问:有无用过开源的游戏框架</font></h3><p>答：无</p>
+<h3 id="问-说下APK包下的OS"><a href="#问-说下APK包下的OS" class="headerlink" title="问:说下APK包下的OS"></a><font color="#ff0000">问:说下APK包下的OS</font></h3><p>答： </p>
+<h3 id="问-说下LZ4和LZ4HC的区别"><a href="#问-说下LZ4和LZ4HC的区别" class="headerlink" title="问:说下LZ4和LZ4HC的区别"></a><font color="#ff0000">问:说下LZ4和LZ4HC的区别</font></h3><p>答:<br>LZ4:压缩速度快,适用于开发版本的快速压缩<br>LZ4HC:更高的压缩率和更好的加载性能,一般用于正式发布</p>
+<h3 id="问-怎么管理单例类"><a href="#问-怎么管理单例类" class="headerlink" title="问:怎么管理单例类"></a><font color="#ff0000">问:怎么管理单例类</font></h3><p>答:<br>写个单例基类,单例分三种,一种是不继承至MonoBehavior的单例,一种是继承至MonoBehavior的单例并且自动生成GameObj物体,例如PoolMnnager,回收时把物体挂在生成的PoolManager物体下;一种是继承至MonoBehavior的但不自动生成GameObj物体,例如CameraController。</p>
+
       
     </div>
 
