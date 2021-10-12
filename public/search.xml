@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>XLua相关</title>
+      <link href="/2021/10/13/XLua%E7%9B%B8%E5%85%B3/"/>
+      <url>/2021/10/13/XLua%E7%9B%B8%E5%85%B3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一丶环境配置"><a href="#一丶环境配置" class="headerlink" title="一丶环境配置"></a><font color="#ff0000">一丶环境配置</font></h3><p>打开从 <a href="https://github.com/Tencent/xLua" target="_blank" rel="noopener">Xlua官网</a>下载的脚本并解压,注意 图1-1 的两个红色文件夹,分别是Assets和Tools.<img src="/2021/10/13/XLua相关/1-1.png" alt="1-1"><br>先说Assets,把Assets下的Xlua和Plugins放入你的项目中的Assets下,即和Resources文件夹同级. 如图1-2 <img src="/2021/10/13/XLua相关/1-2.png" alt="1-2"><br>再说回Tools,把Tools放到你项目中和你Assets同级的位置下.如图1-3 <img src="/2021/10/13/XLua相关/1-3.png" alt="1-3"><br>接着回到Unity,在菜单栏Edit-Project Setting-Player-Script Compilation中添加一个宏 HOTFIX_ENABLE (平时开发就不用添加了 不然你脚本一重新编译 就要重新生成代码和注入编辑器 麻烦得很 不重新注入就会报错)</p><h3 id="二丶使用方法"><a href="#二丶使用方法" class="headerlink" title="二丶使用方法"></a><font color="#ff0000">二丶使用方法</font></h3><p>鸽了</p><h3 id="三丶可能会出现的问题"><a href="#三丶可能会出现的问题" class="headerlink" title="三丶可能会出现的问题"></a><font color="#ff0000">三丶可能会出现的问题</font></h3><p><font color="#ff0000">问题一丶 打包报错</font><br>如图3-1 <img src="/2021/10/13/XLua相关/3-1.png" alt="3-1"><br>解决方法:在Generator.CS的BlackList上加上这几句 如图3-2 <img src="/2021/10/13/XLua相关/3-2.png" alt="3-2"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>面试问到的问题(合集)</title>
       <link href="/2021/09/22/%E9%9D%A2%E8%AF%95%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98(%E5%90%88%E9%9B%86)/"/>
       <url>/2021/09/22/%E9%9D%A2%E8%AF%95%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98(%E5%90%88%E9%9B%86)/</url>
