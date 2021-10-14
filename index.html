@@ -183,6 +183,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DJ">
+      <meta itemprop="description" content="找工作找工作">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天DJ找到工作了吗">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/" class="post-title-link" itemprop="url">Nginx部署文件服务器(用于AB包的下载)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-14 14:59:03 / 修改时间：15:29:44" itemprop="dateCreated datePublished" datetime="2021-10-14T14:59:03+08:00">2021-10-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一丶下载Nginx"><a href="#一丶下载Nginx" class="headerlink" title="一丶下载Nginx"></a><font color="#ff0000">一丶下载Nginx</font></h3><p>省略</p>
+<h3 id="二丶配置Nginx"><a href="#二丶配置Nginx" class="headerlink" title="二丶配置Nginx"></a><font color="#ff0000">二丶配置Nginx</font></h3><p>输入 <code>find / -name nginx.conf</code><br>如图1-1所示 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-1.png" alt="1-1"></p>
+<p>找到Nginx的配置文件,然后进入目录,然后输入 <code>vi nginx.conf</code> ,修改和增加下图的相关配置 如图1-2 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-2.png" alt="1-2"></p>
+<p>1.把 user用户改为 root,<br>2.增加目录的属性<br>3.增加server属性,如果端口被占用了,修改2个listen的6868为其它端口;root为你的AB包根目录,可以按自己的路径修改,接着保存文件. </p>
+<p>紧接着杀掉nginx进程,输入 <code>killall -9 nginx</code> ,然后去到nginx.conf的目录,然后输入 <code>nginx -c ./nginx.conf &amp;</code> 挂后台,接着输入<code>service nginx start</code>就可以了,接着在浏览器输入你配置的ip+端口 <code>ip:port</code>就能查看了,如图1-3 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-3.png" alt="1-3"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/14/Rider相关/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DJ">
+      <meta itemprop="description" content="找工作找工作">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天DJ找到工作了吗">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/14/Rider相关/" class="post-title-link" itemprop="url">Rider相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-14 14:47:57 / 修改时间：14:57:49" itemprop="dateCreated datePublished" datetime="2021-10-14T14:47:57+08:00">2021-10-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a><font color="#ff0000">调试</font></h3><p>直接按F5,如果不行看右上角的配置.如图1-1 <img src="/2021/10/14/Rider相关/1-1.png" alt="1-1"></p>
+<p>快捷键或者调试按钮在编辑器下方,如图1-2 所示 <img src="/2021/10/14/Rider相关/1-2.png" alt="1-2"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/13/XLua相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -377,7 +500,7 @@
 <li><p>UI预制体加载后要用<code>Instantiate(GameObject go,Transform parnet)</code>设置父物体,直接生成出来会改变UI的RectTransform本身的属性</p>
 </li>
 <li><p>for循环中使用异步方法并且需要用到i时,用临时变量存住i,比如</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for(int i=0;i&lt;10;i++)</span><br><span class="line">&#123;</span><br><span class="line">    int index = i;</span><br><span class="line">    ResManager.instance.loadResAsync(&quot;path&quot;,(obj)=&gt;&#123;</span><br><span class="line">        obj.name = index;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> index = i;</span><br><span class="line">    ResManager.instance.loadResAsync(<span class="string">"path"</span>,(obj)=&gt;&#123;</span><br><span class="line">        obj.name = index;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li></li>
 </ol>
@@ -738,152 +861,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/05/接入微信开发者工具遇到的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="DJ">
-      <meta itemprop="description" content="找工作找工作">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="今天DJ找到工作了吗">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/05/接入微信开发者工具遇到的问题/" class="post-title-link" itemprop="url">接入微信开发者平台遇到的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-05 13:19:52" itemprop="dateCreated datePublished" datetime="2020-01-05T13:19:52+08:00">2020-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 04:59:07" itemprop="dateModified" datetime="2020-06-05T04:59:07+08:00">2020-06-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="这篇文章用来更新Cocos接入微信小游戏平台我所所遇的所有代码问题"><a href="#这篇文章用来更新Cocos接入微信小游戏平台我所所遇的所有代码问题" class="headerlink" title="这篇文章用来更新Cocos接入微信小游戏平台我所所遇的所有代码问题"></a>这篇文章用来更新Cocos接入微信小游戏平台我所所遇的所有<strong>代码</strong>问题</h2><p>  闲话：谁又能想到学了一两年Unity的我突然被赶鸭子上架去学Cocos和JS呢。<del>但这丝毫不影响我一个月内就学会Cocos和JS,今天DJ又无敌了吗</del><br>    咳咳,相信大家都有在Broswer或者Simulator运行时没有报错,但是一在微信开发者工具运行就报错的情况,简直跟吃了<del>欧力给</del>一样难受,下面来为大家排坑,没找到你遇到的错误的话,那可真是<code>果咩纳塞</code>了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/05/接入微信开发者工具遇到的问题/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/时间倒数计时UI的制作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="DJ">
-      <meta itemprop="description" content="找工作找工作">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="今天DJ找到工作了吗">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/30/时间倒数计时UI的制作/" class="post-title-link" itemprop="url">时间倒数计时UI的制作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-30 21:49:27" itemprop="dateCreated datePublished" datetime="2019-10-30T21:49:27+08:00">2019-10-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-05 04:59:47" itemprop="dateModified" datetime="2020-06-05T04:59:47+08:00">2020-06-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="直入主题"><a href="#直入主题" class="headerlink" title="直入主题"></a>直入主题</h2><p>首先你需要一个txt的UI,然后还有一个float类型的总时间totalTime,我这是用秒为单位的,即你想计时5分钟,代码为<code>totalTime=300;</code>.</p>
-<p>接着定义2个int类型的min和second.</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> min;</span><br><span class="line"><span class="keyword">int</span> second;</span><br><span class="line">Text timeTxt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/10/30/时间倒数计时UI的制作/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -954,7 +931,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
