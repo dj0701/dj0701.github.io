@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-14 14:59:03 / 修改时间：15:29:44" itemprop="dateCreated datePublished" datetime="2021-10-14T14:59:03+08:00">2021-10-14</time>
+              <time title="创建时间：2021-10-14 14:59:03 / 修改时间：15:31:37" itemprop="dateCreated datePublished" datetime="2021-10-14T14:59:03+08:00">2021-10-14</time>
             </span>
 
           
@@ -226,7 +226,7 @@
 <h3 id="二丶配置Nginx"><a href="#二丶配置Nginx" class="headerlink" title="二丶配置Nginx"></a><font color="#ff0000">二丶配置Nginx</font></h3><p>输入 <code>find / -name nginx.conf</code><br>如图1-1所示 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-1.png" alt="1-1"></p>
 <p>找到Nginx的配置文件,然后进入目录,然后输入 <code>vi nginx.conf</code> ,修改和增加下图的相关配置 如图1-2 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-2.png" alt="1-2"></p>
 <p>1.把 user用户改为 root,<br>2.增加目录的属性<br>3.增加server属性,如果端口被占用了,修改2个listen的6868为其它端口;root为你的AB包根目录,可以按自己的路径修改,接着保存文件. </p>
-<p>紧接着杀掉nginx进程,输入 <code>killall -9 nginx</code> ,然后去到nginx.conf的目录,然后输入 <code>nginx -c ./nginx.conf &amp;</code> 挂后台,接着输入<code>service nginx start</code>就可以了,接着在浏览器输入你配置的ip+端口 <code>ip:port</code>就能查看了,如图1-3 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-3.png" alt="1-3"></p>
+<p>紧接着杀掉nginx进程,输入 <code>killall -9 nginx</code> ,然后去到nginx.conf的目录,然后输入 <code>nginx -c ./nginx.conf &amp;</code> 挂后台,目的是为了然你断开链接后nginx依然在执行,接着输入<code>service nginx start</code>就可以了,接着在浏览器输入你配置的ip+端口 <code>ip:port</code>就能查看了,如图1-3 <img src="/2021/10/14/Nginx部署文件服务器(用于AB包的下载)/1-3.png" alt="1-3"></p>
 
       
     </div>
@@ -500,7 +500,7 @@
 <li><p>UI预制体加载后要用<code>Instantiate(GameObject go,Transform parnet)</code>设置父物体,直接生成出来会改变UI的RectTransform本身的属性</p>
 </li>
 <li><p>for循环中使用异步方法并且需要用到i时,用临时变量存住i,比如</p>
- <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> index = i;</span><br><span class="line">    ResManager.instance.loadResAsync(<span class="string">"path"</span>,(obj)=&gt;&#123;</span><br><span class="line">        obj.name = index;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for(int i=0;i&lt;10;i++)</span><br><span class="line">&#123;</span><br><span class="line">    int index = i;</span><br><span class="line">    ResManager.instance.loadResAsync(&quot;path&quot;,(obj)=&gt;&#123;</span><br><span class="line">        obj.name = index;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li></li>
 </ol>
